@@ -1,0 +1,47 @@
+[System]
+Name='u21_fis'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='u21'
+Range=[-0.02 0.02]
+NumMFs=3
+MF1='NB':'trimf',[-0.03653 -0.01973 -0.003064]
+MF2='ZO':'trimf',[-0.01667 0 0.01667]
+MF3='PB':'trimf',[0.003827 0.02049 0.03716]
+
+[Input2]
+Name='du21'
+Range=[-2.5 2.5]
+NumMFs=3
+MF1='NB':'trimf',[-4.583 -2.5 -0.4167]
+MF2='ZO':'trimf',[-2.083 0 2.083]
+MF3='PB':'trimf',[0.4167 2.5 4.583]
+
+[Output1]
+Name='outputu21'
+Range=[-0.03 0.03]
+NumMFs=3
+MF1='NB':'trimf',[-0.0552 -0.03 0.0121]
+MF2='ZO':'trimf',[-0.02394 -0.0001035 0.02414]
+MF3='PB':'trimf',[-0.01189 0.02988 0.0552]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 1, 2 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1

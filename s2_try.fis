@@ -1,0 +1,47 @@
+[System]
+Name='s2_try'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='S2'
+Range=[-45 40]
+NumMFs=3
+MF1='NB':'trimf',[-80.42 -45 -9.58]
+MF2='ZO':'trimf',[-43.94 -2.5 40.07]
+MF3='PB':'trimf',[4.583 40 75.42]
+
+[Input2]
+Name='dS2'
+Range=[-7000 7000]
+NumMFs=3
+MF1='NB':'trimf',[-12830 -7000 -1167]
+MF2='ZO':'trimf',[-5833 0 5833]
+MF3='PB':'trimf',[1167 7000 12830]
+
+[Output1]
+Name='outputK2'
+Range=[50 60]
+NumMFs=3
+MF1='NB':'trimf',[45.85 50 57.02]
+MF2='ZO':'trimf',[50.84 55 59.16]
+MF3='PB':'trimf',[53.04 60 64.15]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 1, 2 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
